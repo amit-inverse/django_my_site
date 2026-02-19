@@ -1,10 +1,53 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     My Blog
 {% endblock %}
 
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
 {% block content %}
-    <h1>Welcome to My Blog</h1>
-    <p>This is the starting page of my blog.</p>
+    <header id="main-navigation">
+        <h1><a href="">Amit's Blog</a></h1>
+
+        <nav>
+            <a href="">All Posts</a>
+        </nav>
+    </header>
+    
+    <section id="welcome">
+        <header>
+            <img src="" alt="Amit - The Author Of This Blog">
+            <h2>AMIT'S BLOG</h2>
+        </header>
+
+        <p>Hi, I am Amit, a software developer and blogger. I write about programming, technology, and my personal experiences in the tech industry. Welcome to my blog!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+
+        <ul>
+            <li>
+                <article class="post">
+                    <a href="">
+                        <img src="" alt="Mountain Hiking" />
+                        <div class="post__content">
+                            <h3>Mountain Hiking</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.</p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I love programming and sharing my knowledge with others. I write about various programming languages, frameworks, and tools that I use in my projects. I also share my thoughts on the latest trends in technology and software development.</p>
+        <p>My goal is to help other developers learn and grow in their careers by providing valuable insights and resources through my blog.</p>
+    </section>
 {% endblock %}
