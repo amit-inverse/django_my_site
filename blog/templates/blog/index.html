@@ -7,17 +7,10 @@
 
 {% block css_files %}
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
 {% endblock %}
 
-{% block content %}
-    <header id="main-navigation">
-        <h1><a href="">Amit's Blog</a></h1>
-
-        <nav>
-            <a href="">All Posts</a>
-        </nav>
-    </header>
-    
+{% block content %}    
     <section id="welcome">
         <header>
             <img src="{% static "blog/images/amit.jpg" %}" alt="Amit - The Author Of This Blog">
@@ -31,17 +24,7 @@
         <h2>My Latest Thoughts</h2>
 
         <ul>
-            <li>
-                <article class="post">
-                    <a href="">
-                        <img src="{% static "blog/images/mountains.jpg" %}" alt="Mountain Hiking" height="200" width="300"/>
-                        <div class="post__content">
-                            <h3>Mountain Hiking</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.</p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            {% include "blog/includes/post.html" %}
         </ul>
     </section>
 
