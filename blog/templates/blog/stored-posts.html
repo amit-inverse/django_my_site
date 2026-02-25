@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Stored Posts
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>My Stored Posts</h1>
+        {% if not has_posts %}
+            <p>You haven't stored any posts for later reading yet.</p>
+        {% endif %}
+        <ul>
+            {% for post in stored_posts %}
+                <li>
+                    <a href="{% url 'post-detail-page' post.slug %}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
