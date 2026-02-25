@@ -167,3 +167,18 @@ main {
   margin-bottom: 1rem;
   color: #390281;
 }
+
+#read-later {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+}
+
+#read-later button {
+  background-color: #390281;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

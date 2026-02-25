@@ -57,3 +57,7 @@ class PostDetailView(View):
             "comments": post.comments.all().order_by("-id"),
         }
         return render(request, self.template_name, context)
+
+
+class ReadLaterView(View):
+    pass
