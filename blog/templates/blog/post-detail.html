@@ -32,9 +32,17 @@
         <p>{{ post.content|linebreaks }}</p>
     </main>
 
-    <div>
-        <form>
-            {{ comment_form}}
+    <section id="comment-form">
+        <h2>Your Comment</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {% for form_fields in comment_form %}
+                <section class="form-control">
+                    {{ form_fields.label_tag }}
+                    {{ form_fields }}
+                    {{ form_fields.errors }}
+                </section>
+            {% endfor %}
 
             <button type="submit">Submit comment</button>
         </form>
